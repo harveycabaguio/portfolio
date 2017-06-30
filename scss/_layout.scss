@@ -1,0 +1,103 @@
+//Styling generic components
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: ($base-unit * 4);
+  padding-bottom: ($base-unit * 4);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: ($base-unit * 4);
+  padding-bottom: ($base-unit * 4);
+  overflow: auto;
+}
+.altBg {
+  background-color: transparentize($foreground, 0.98);
+}
+
+.darkMode {
+  background-color: $foreground;
+}
+
+.content {
+  width: $column;
+}
+@media (max-width: $column-limit) {
+  .content {
+    width: 100%;
+    padding-left: ($base-unit * 2);
+    padding-right: ($base-unit * 2);
+  }
+}
+
+.compare {
+  display: flex;
+  justify-content: center;
+}
+.compare .col {
+  position: relative;
+}
+.compare .caption {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.screens {
+  align-items: stretch;
+}
+@media (max-width: ($column * 1.5)) {
+  .screens {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+.icons {
+  width: $column;
+  align-items: flex-end;
+  padding-top: ($base-unit * 3);
+  padding-bottom: ($base-unit * 3);
+  margin-bottom: ($base-unit * 2);
+  
+  border-radius: 4px;
+  @include transition(1.5);
+}
+.icons .col {
+  padding-left: ($base-unit / 2);
+  padding-right: ($base-unit / 2);
+}
+@media (max-width: $column-limit) {
+  .icons {
+    width: calc(100% - #{($base-unit * 4)});
+    margin-left: ($base-unit * 2);
+    margin-right: ($base-unit * 2);
+  }
+}
+@media (max-width: 401px) {
+  .icons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .icons .col {
+    padding-top: ($base-unit);
+    padding-bottom: ($base-unit);
+  }
+}
+
+.screenshot {
+  display: inline-block;
+  max-width: ($column * 2);
+  margin: ($base-unit * 2);
+  
+  @include box-shadow;
+}
+@media (max-width: ($column * 2)) {
+  .screenshot {
+    width: 100%;
+  }
+}

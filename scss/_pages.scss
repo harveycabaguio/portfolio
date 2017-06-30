@@ -1,0 +1,11 @@
+// Page-specific styles
+#agenda {
+  .hero {
+    background-image: linear-gradient(0, #64baff, #0d52bf);
+    
+    h1 {
+      color: $white;
+      @include text-shadow();
+    }
+  }
+}

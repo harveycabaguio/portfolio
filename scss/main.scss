@@ -1,0 +1,58 @@
+@charset "UTF-8";
+
+// Variables
+ 
+// Typography
+$heading-font: 'Montserrat';
+$body-font: 'Open Sans';
+$base-font-size: 16px;
+
+// Colors
+$background: rgba(250,250,251,1.0);
+$foreground: rgba(35,55,70,1.0);
+$white: rgba(255,255,255,1.0);
+$red: rgba(242,59,76,1.0);
+$red200: mix(white, $red, 35%);
+$red400: mix(black, $red, 20%);
+$blue: complement($red);
+
+// Grid
+$base-unit: 12px;
+$column: ($base-unit * 50);
+$column-limit: ($column + ($base-unit * 2));
+
+/* Reset */
+body,
+div,
+img,
+p,
+h1,
+h2,
+h3,
+a {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+//Mixins
+@mixin text-shadow {
+  text-shadow: 0 1px 2px rgba(0,0,0,0.2),
+               0 2px 4px rgba(0,0,0,0.1);
+}
+
+@mixin box-shadow {
+  box-shadow: inset 0 1px 0 transparentize($white, 0.5),
+              0 1px 2px rgba(0,0,0,0.2),
+              0 2px 4px rgba(0,0,0,0.1);
+}
+
+@mixin transition($multiplier) {
+  transition: (120ms * $multiplier) all ease-in-out;
+}
+
+// Import
+@import 'typography';
+@import 'layout';
+@import 'inputs';
+@import 'pages';
